@@ -21,6 +21,7 @@
 #'
 #' @export
 theme_fira <- function(family = "Fira Sans") {
+  if (!"Fira Sans" %in% extrafont::fonts()) setupFont()
   list(ggplot2::`%+replace%`(
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
     ggplot2::theme(
@@ -70,8 +71,9 @@ theme_fira <- function(family = "Fira Sans") {
 #' @export
 setupFont <- function() {
   if (!file.exists("C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")) {
-    cat("Run the following with the correct location to GhostScript Binary:\n",
-        'Sys.setenv(R_GSCMD = "C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")')
+    stop("Install GhostScript and run the following with the correct location",
+         "to the installed GhostScript Binary:\n Sys.setenv(R_GSCMD =",
+         '"C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")')
   } else {
     Sys.setenv(R_GSCMD = "C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")
   }

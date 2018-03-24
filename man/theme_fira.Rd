@@ -18,8 +18,8 @@ This theme uses Mozilla's Fira Sans as its font. Before using it, run the
 and saving to pdf using \code{firaSave()}.
 }
 \examples{
-ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924)) +
-  geom_point(size = 2, colour = firaCols[1]) +
+ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = cyl)) +
+  geom_point(size = 2) +
   labs(title = "Car weight vs efficiency",
        x = "Efficiency (km/l)",
        y = "Weight (1000 kg)") +
