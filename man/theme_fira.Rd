@@ -13,9 +13,8 @@ theme_fira(family = "Fira Sans")
 ggplot theme
 }
 \description{
-This theme uses Mozilla's Fira Sans as its font. Before using it, run the
-\code{setupFont()} function to make it available for both on-screen graphics
-and saving to pdf using \code{firaSave()}.
+This theme uses Mozilla's Fira Sans as its font.
+Save to pdf using \code{firaSave()}.
 }
 \examples{
 ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = cyl)) +

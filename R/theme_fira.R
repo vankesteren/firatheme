@@ -1,8 +1,7 @@
 #' Fira theme
 #'
-#' This theme uses Mozilla's Fira Sans as its font. Before using it, run the
-#' \code{setupFont()} function to make it available for both on-screen graphics
-#' and saving to pdf using \code{firaSave()}.
+#' This theme uses Mozilla's Fira Sans as its font.
+#' Save to pdf using \code{firaSave()}.
 #'
 #' @param family Change the font family. Defaults to Fira Sans.
 #'
@@ -68,6 +67,13 @@ theme_fira <- function(family = "Fira Sans") {
   firascale_colour_discrete())
 }
 
+#' Set up the fira font
+#'
+#' This function enables the use of fira in plots and in pdf graphics output. It
+#' is automatically run by theme_fira if necessary
+#'
+#' @seealso \code{\link{theme_fira}}
+#'
 #' @export
 setupFont <- function() {
   if (!file.exists("C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")) {
@@ -87,6 +93,17 @@ setupFont <- function() {
 }
 
 
+#' Save plots that use the fira theme
+#'
+#' This function behaves like \code{ggsave} but automatically embeds the fira
+#' font if the output format is pdf.
+#'
+#' @param filename path to a file
+#' @param device which type of output device to use
+#' @param ... other arguments passed to ggsave
+#'
+#' @seealso \code{\link{ggplot2::ggsave}}
+#'
 #' @export
 firaSave <- function(filename = "plot.pdf", device = "pdf", ...) {
   ggplot2::ggsave(filename = filename, device = device, ...)
@@ -95,14 +112,29 @@ firaSave <- function(filename = "plot.pdf", device = "pdf", ...) {
   }
 }
 
+#' Fira theme palette
+#'
+#' This function outputs n colours from the fira palette
+#'
+#' @param n the number of colours to output
+#'
+#' @seealso \code{\link{firaCols}}
+#'
 #' @export
 firaPalette <- function(n = 5) {
-  if (n == 4) return(firaCols[c(1, 2, 3, 5)])
+  if (n == 4) return(firaCols[c(1, 3, 4, 5)])
   return(grDevices::colorRampPalette(firaCols)(n))
 }
 
+#' Fira theme colours
+#'
+#' This is a vector with 5 colours to be used in palettes and other visual
+#' elements.
+#'
+#' @seealso \code{\link{firaPalette}}
+#'
 #' @export
-firaCols <- c("#00008b", "#499293", "#e2bd36", "#234c20", "#dd7373")
+firaCols <- c("#00008b", "#dd7373", "#499293", "#234c20", "#e2bd36")
 
 
 firascale_fill_discrete <- function(..., na.value = "grey50") {
