@@ -4,6 +4,8 @@
 #' Save to pdf using \code{firaSave()}.
 #'
 #' @param family Change the font family. Defaults to Fira Sans.
+#' @param colourPalette either the function ejPalette or valiPalette
+#' (or any grDevices::colorRampPalette function)
 #'
 #' @return ggplot theme
 #'
@@ -15,11 +17,11 @@
 #'        y = "Weight (1000 kg)") +
 #'   theme_fira()
 #'
-#' @seealso \code{\link{setupFont}}, \code{\link{firaCols}},
-#' \code{\link{firaPalette}}
+#' @seealso \code{\link{setupFont}}, \code{\link{valiPalette}},
+#' \code{\link{ejPalette}}
 #'
 #' @export
-theme_fira <- function(family = "Fira Sans") {
+theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
   if (!"Fira Sans" %in% extrafont::fonts()) setupFont()
   list(ggplot2::`%+replace%`(
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
@@ -63,8 +65,8 @@ theme_fira <- function(family = "Fira Sans") {
       strip.text = element_text(size = 12, colour = "#212121")
     )
   ),
-  firascale_fill_discrete(),
-  firascale_colour_discrete())
+  discrete_scale("fill", "fira", colourPalette, na.value = "grey50"),
+  discrete_scale("colour", "fira", colourPalette, na.value = "grey50"))
 }
 
 #' Set up the fira font
@@ -110,37 +112,4 @@ firaSave <- function(filename = "plot.pdf", device = "pdf", ...) {
   if (device == "pdf") {
     extrafont::embed_fonts(filename)
   }
-}
-
-#' Fira theme palette
-#'
-#' This function outputs n colours from the fira palette
-#'
-#' @param n the number of colours to output
-#'
-#' @seealso \code{\link{firaCols}}
-#'
-#' @export
-firaPalette <- function(n = 5) {
-  if (n == 4) return(firaCols[c(1, 3, 4, 5)])
-  return(grDevices::colorRampPalette(firaCols)(n))
-}
-
-#' Fira theme colours
-#'
-#' This is a vector with 5 colours to be used in palettes and other visual
-#' elements.
-#'
-#' @seealso \code{\link{firaPalette}}
-#'
-#' @export
-firaCols <- c("#00008b", "#dd7373", "#499293", "#234c20", "#e2bd36")
-
-
-firascale_fill_discrete <- function(..., na.value = "grey50") {
-  discrete_scale("fill", "fira", firaPalette, na.value = na.value, ...)
-}
-
-firascale_colour_discrete <- function(..., na.value = "grey50") {
-  discrete_scale("colour", "fira", firaPalette, na.value = na.value, ...)
 }
