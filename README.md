@@ -15,3 +15,10 @@ ggplot(data.frame(x = 1:10, y = c(exp(1:10))), aes(x, y)) +
 
 firasave()
 ```
+
+`firaCols`
+![col](colour.png)
+
+
+`firaPalette()`
+![cols](colours.png)
