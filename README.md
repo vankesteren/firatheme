@@ -4,7 +4,16 @@
 </p>
 <br>
 
-This is a ggplot2 theme that I use on my [blog](vankesteren.github.io) and elsewhere. As with any software project, this has a collection of dependencies it builds on:
+This is a `ggplot2` theme I use on my [blog](https://vankesteren.github.io) and elsewhere. You can use it and adapt it if you want. Here is an example:
+
+<p align="center">
+  <br/>
+  <img src="./img/plot.png" width="70%"></img>
+  <br/>
+</p>
+
+
+As with any software project, this has a collection of dependencies it builds on:
 
 - The [trafford data lab theme](https://github.com/traffordDataLab/assets/blob/master/theme/ggplot2/theme_lab.R) was one of the main inspirations.
 - It uses Mozilla's [Fira Sans](https://mozilla.github.io/Fira/) font because it is beautiful.
