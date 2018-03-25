@@ -60,12 +60,12 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
                                             margin = ggplot2::margin(b = 10)),
 
       # add padding to the caption
-      plot.caption = ggplot2::element_text(size = 10, colour = "#212121",
+      plot.caption = ggplot2::element_text(size = 10, colour = "#454545",
                                            hjust = 1,
                                            margin = ggplot2::margin(t = 15)),
 
       # Adjust text size and axis title position
-      axis.title = ggplot2::element_text(size = 13, colour = "#212121",
+      axis.title = ggplot2::element_text(size = 13, colour = "#454545",
                                          hjust = 0.95),
       axis.text = ggplot2::element_text(size = 10, colour = "#212121"),
       legend.title = ggplot2::element_text(size = 12, colour = "#212121"),
