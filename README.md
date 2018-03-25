@@ -13,15 +13,15 @@ ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
 
 firaSave("plot.png", device = "png", dpi = 300)
 ```
-![plt](img/plot.png)
+![plt](./img/plot.png)
 
 # Colours
 
 `ejCols`
-![col](img/ejcols.png)
+![col](./img/ejcols.png)
 
 `valiCols`
-![val](img/valicols.png)
+![val](./img/valicols.png)
 
 `ejPalette()`
-![cols](img/ejpalette.png)
+![cols](./img/ejpalette.png)
