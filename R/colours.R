@@ -4,7 +4,7 @@
 #'
 #' @param n the number of colours to output
 #'
-#' @seealso \code{\link{firaCols}}, \code{\link{valiPalette}}
+#' @seealso \code{\link{ejCols}}, \code{\link{valiPalette}}
 #'
 #' @export
 ejPalette <- function(n = 5) {
@@ -46,12 +46,3 @@ valiPalette <- function(n = 5) {
 #'
 #' @export
 valiCols <- c("#961616", "044389", "#57a57c", "#ffe066", "#56203d")
-
-
-firascale_fill_discrete <- function(..., na.value = "grey50") {
-
-}
-
-firascale_colour_discrete <- function(..., na.value = "grey50") {
-
-}

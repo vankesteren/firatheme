@@ -13,5 +13,5 @@ ejPalette(n = 5)
 This function outputs n colours from the ej palette
 }
 \seealso{
-\code{\link{firaCols}}, \code{\link{valiPalette}}
+\code{\link{ejCols}}, \code{\link{valiPalette}}
 }

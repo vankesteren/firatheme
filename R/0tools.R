@@ -1,7 +1,6 @@
 .onAttach <- function(libname, pkgname) {
   ## Load all fonts
-  extrafont::loadfonts("pdf", quiet = TRUE)
-  extrafont::loadfonts("postscript", quiet = TRUE)
+  extrafont::loadfonts(quiet = TRUE)
   if (.Platform$OS.type == "windows") {
     extrafont::loadfonts("win", quiet = TRUE)
   }
@@ -34,10 +33,10 @@ setupGhostScript <- function() {
 
 }
 
-
+#' @importFrom grDevices windowsFonts
 fontsReady <- function() {
   if (.Platform$OS.type == "windows") {
-    if ("Fira Sans" %in% windowsFonts()) return(TRUE)
+    if ("Fira Sans" %in% grDevices::windowsFonts()) return(TRUE)
   } else {
     if ("Fira Sans" %in% extrafont::fonts()) return(TRUE)
   }
