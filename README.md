@@ -30,9 +30,9 @@ ggplot(chickwts, aes(x = feed, y = weight)) +
 
 ```R
 ggplot(airquality, aes(y = Ozone, x = 1:nrow(airquality))) + 
-  geom_smooth(colour = ejCols[1], size = 0.7, method = "gam", 
-              formula = y ~ poly(x, 2), se = FALSE) + 
-  geom_point(colour = ejCols[4], size = 1.7) + 
+  geom_line(colour = ejCols[2], size = 0.7) + 
+  geom_point(colour = ejCols[2], size = 1.7) + 
+  geom_smooth(colour = ejCols[1], size = 0.7,se = FALSE) + 
   labs(title = "Ozone in New York", x = "Days") + 
   theme_fira()
 ```
