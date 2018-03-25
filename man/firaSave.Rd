@@ -18,5 +18,5 @@ This function behaves like \code{ggsave} but automatically embeds the fira
 font if the output format is pdf.
 }
 \seealso{
-\code{\link{ggplot2::ggsave}}
+\code{\link[ggplot2]{ggsave}}
 }

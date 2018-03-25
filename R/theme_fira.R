@@ -27,46 +27,54 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
     ggplot2::theme(
       # add padding to the plot
-      plot.margin = unit(rep(0.5, 4), "cm"),
+      plot.margin = grid::unit(rep(0.5, 4), "cm"),
 
       # remove the plot background and border
-      plot.background = element_blank(),
-      panel.background = element_blank(),
-      panel.border = element_blank(),
+      plot.background = ggplot2::element_blank(),
+      panel.background = ggplot2::element_blank(),
+      panel.border = ggplot2::element_blank(),
 
       # make the legend and strip background transparent
-      legend.background = element_rect(fill = "transparent", colour = NA),
-      legend.key = element_rect(fill = "transparent", colour = NA),
-      strip.background = element_rect(fill = "transparent", colour = NA),
+      legend.background = ggplot2::element_rect(fill = "transparent",
+                                                colour = NA),
+      legend.key = ggplot2::element_rect(fill = "transparent",colour = NA),
+      strip.background = ggplot2::element_rect(fill = "transparent",
+                                               colour = NA),
 
       # add light, dotted major grid lines only
-      panel.grid.major = element_line(linetype = "dotted", colour = "#454545", size = 0.3),
-      panel.grid.minor = element_blank(),
+      panel.grid.major = ggplot2::element_line(linetype = "dotted",
+                                               colour = "#454545",
+                                               size = 0.3),
+      panel.grid.minor = ggplot2::element_blank(),
 
       # remove the axis tick marks and hide axis lines
-      axis.ticks = element_blank(),
-      axis.line = element_line(color = "#454545", size = 0.3),
+      axis.ticks = ggplot2::element_blank(),
+      axis.line = ggplot2::element_line(color = "#454545", size = 0.3),
 
       # modify the bottom margins of the title and subtitle
-      plot.title = element_text(size = 18, colour = "#454545", hjust = 0.5,
-                                margin = margin(b = 10)),
-      plot.subtitle = element_text(size = 12, colour = "#454545", hjust = 0,
-                                   margin = margin(b = 10)),
+      plot.title = ggplot2::element_text(size = 18, colour = "#454545",
+                                         hjust = 0.5,
+                                         margin = ggplot2::margin(b = 10)),
+      plot.subtitle = ggplot2::element_text(size = 12, colour = "#454545",
+                                            hjust = 0,
+                                            margin = ggplot2::margin(b = 10)),
 
       # add padding to the caption
-      plot.caption = element_text(size = 10, colour = "#212121", hjust = 1,
-                                  margin = margin(t = 15)),
+      plot.caption = ggplot2::element_text(size = 10, colour = "#212121",
+                                           hjust = 1,
+                                           margin = ggplot2::margin(t = 15)),
 
       # Adjust text size and axis title position
-      axis.title = element_text(size = 13, colour = "#212121", hjust = 0.95),
-      axis.text = element_text(size = 10, colour = "#212121"),
-      legend.title = element_text(size = 12, colour = "#212121"),
-      legend.text = element_text(size = 10, colour = "#212121"),
-      strip.text = element_text(size = 12, colour = "#212121")
+      axis.title = ggplot2::element_text(size = 13, colour = "#212121",
+                                         hjust = 0.95),
+      axis.text = ggplot2::element_text(size = 10, colour = "#212121"),
+      legend.title = ggplot2::element_text(size = 12, colour = "#212121"),
+      legend.text = ggplot2::element_text(size = 10, colour = "#212121"),
+      strip.text = ggplot2::element_text(size = 12, colour = "#212121")
     )
   ),
-  discrete_scale("fill", "fira", colourPalette, na.value = "grey50"),
-  discrete_scale("colour", "fira", colourPalette, na.value = "grey50"))
+  ggplot2::discrete_scale("fill", "fira", colourPalette, na.value = "grey50"),
+  ggplot2::discrete_scale("colour", "fira", colourPalette, na.value = "grey50"))
 }
 
 #' Set up the fira font
@@ -104,7 +112,7 @@ setupFont <- function() {
 #' @param device which type of output device to use
 #' @param ... other arguments passed to ggsave
 #'
-#' @seealso \code{\link{ggplot2::ggsave}}
+#' @seealso \code{\link[ggplot2]{ggsave}}
 #'
 #' @export
 firaSave <- function(filename = "plot.pdf", device = "pdf", ...) {
