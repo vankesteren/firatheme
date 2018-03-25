@@ -3,7 +3,6 @@
 export(ejCols)
 export(ejPalette)
 export(firaSave)
-export(setupFont)
 export(theme_fira)
 export(valiCols)
 export(valiPalette)

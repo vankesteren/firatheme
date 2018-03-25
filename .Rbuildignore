@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 ^.*.pdf
 ^img
+^.travis.yml

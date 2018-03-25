@@ -29,6 +29,5 @@ ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = cyl)) +
 
 }
 \seealso{
-\code{\link{setupFont}}, \code{\link{valiPalette}},
-\code{\link{ejPalette}}
+\code{\link{valiPalette}}, \code{\link{ejPalette}}
 }

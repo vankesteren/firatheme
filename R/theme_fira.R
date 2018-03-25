@@ -17,12 +17,11 @@
 #'        y = "Weight (1000 kg)") +
 #'   theme_fira()
 #'
-#' @seealso \code{\link{setupFont}}, \code{\link{valiPalette}},
-#' \code{\link{ejPalette}}
+#' @seealso \code{\link{valiPalette}}, \code{\link{ejPalette}}
 #'
 #' @export
 theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
-  if (!"Fira Sans" %in% extrafont::fonts()) setupFont()
+  if (!fontsReady()) setupFont()
   list(ggplot2::`%+replace%`(
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
     ggplot2::theme(
@@ -68,7 +67,7 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
       axis.title = ggplot2::element_text(size = 13, colour = "#454545",
                                          hjust = 0.95),
       axis.text = ggplot2::element_text(size = 10, colour = "#212121"),
-      legend.title = ggplot2::element_text(size = 12, colour = "#212121"),
+      legend.title = ggplot2::element_text(size = 12, colour = "#454545"),
       legend.text = ggplot2::element_text(size = 10, colour = "#212121"),
       strip.text = ggplot2::element_text(size = 12, colour = "#212121")
     )
@@ -77,30 +76,6 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
   ggplot2::discrete_scale("colour", "fira", colourPalette, na.value = "grey50"))
 }
 
-#' Set up the fira font
-#'
-#' This function enables the use of fira in plots and in pdf graphics output. It
-#' is automatically run by theme_fira if necessary
-#'
-#' @seealso \code{\link{theme_fira}}
-#'
-#' @export
-setupFont <- function() {
-  if (!file.exists("C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")) {
-    stop("Install GhostScript and run the following with the correct location",
-         "to the installed GhostScript Binary:\n Sys.setenv(R_GSCMD =",
-         '"C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")')
-  } else {
-    Sys.setenv(R_GSCMD = "C:\\Program Files\\gs\\gs9.22\\bin\\gswin64c.exe")
-  }
-  if (!"Fira Sans" %in% extrafont::fonts()) {
-    extrafont::ttf_import(paths = system.file('font', package = 'firatheme'))
-  }
-  if (.Platform$OS.type == "windows") {
-    extrafont::loadfonts(device = "win", quiet = TRUE)
-  }
-  extrafont::loadfonts(quiet = TRUE)
-}
 
 
 #' Save plots that use the fira theme
@@ -116,6 +91,7 @@ setupFont <- function() {
 #'
 #' @export
 firaSave <- function(filename = "plot.pdf", device = "pdf", ...) {
+  if (Sys.getenv("R_GSCMD") == "") setupGhostScript()
   ggplot2::ggsave(filename = filename, device = device, ...)
   if (device == "pdf") {
     extrafont::embed_fonts(filename)
