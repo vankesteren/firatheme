@@ -65,6 +65,22 @@ ggplot(chickwts, aes(x = feed, y = weight)) +
 
 ![chk](./img/chick.png)
 
+
+### Boxplot
+
+```R
+library(ggplot2)
+library(firatheme)
+
+ggplot(iris, aes(y = Sepal.Length, x = Species, fill = Species)) +
+  geom_boxplot(col = ejCols[4], width = 0.5, size = 1) +
+  labs(y = "Sepal Length", title = "Iris data") +
+  theme_fira() +
+  theme(legend.position = "none")
+```
+
+![iris](./img/iris.png)
+
 ### More lines
 ```R
 library(ggplot2)
