@@ -1,10 +1,6 @@
 <p align="center">
   <img src="./img/title.svg" width="400px"></img>
   <h5 align="center">Ready-to-use <code>ggplot2</code> theme</h5>
-  <p align="center">
-    <a href="https://travis-ci.org/vankesteren/firatheme"><img src="https://travis-ci.org/vankesteren/firatheme.svg?branch=master"></a>
-  </p>
-
 </p>
 <br>
 
