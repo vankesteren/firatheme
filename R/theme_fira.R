@@ -12,11 +12,13 @@
 #' @examples
 #' library(ggplot2)
 #'
-#' ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = cyl)) +
+#' ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
 #'   geom_point(size = 2) +
 #'   labs(title = "Car weight vs efficiency",
+#'        subtitle = "Using sensible metrics",
 #'        x = "Efficiency (km/l)",
-#'        y = "Weight (1000 kg)") +
+#'        y = "Weight (1000 kg)",
+#'        colour = "Cylinders") +
 #'   theme_fira()
 #'
 #' @seealso \code{\link{valiPalette}}, \code{\link{ejPalette}}
