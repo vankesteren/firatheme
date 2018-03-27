@@ -15,7 +15,10 @@ firaSave(filename = "plot.pdf", device = "pdf", ...)
 }
 \description{
 This function behaves like \code{ggsave} but automatically embeds the fira
-font if the output format is pdf.
+font if the output format requires it. Install 64-bit GhostScript for this
+functionality. Currently only works automatically on Windows. For other
+platforms, run the following with the _correct_ location to the installed
+GhostScript Binary: Sys.setenv(R_GSCMD = "bin/gs/gs9.23/binaryname")
 }
 \seealso{
 \code{\link[ggplot2]{ggsave}}

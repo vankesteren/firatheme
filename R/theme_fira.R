@@ -57,7 +57,7 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
                                          hjust = 0.5,
                                          margin = ggplot2::margin(b = 10)),
       plot.subtitle = ggplot2::element_text(size = 12, colour = "#454545",
-                                            hjust = 0,
+                                            hjust = 0.5,
                                             margin = ggplot2::margin(b = 10)),
 
       # add padding to the caption
@@ -83,7 +83,10 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
 #' Save plots that use the fira theme
 #'
 #' This function behaves like \code{ggsave} but automatically embeds the fira
-#' font if the output format is pdf.
+#' font if the output format requires it. Install 64-bit GhostScript for this
+#' functionality. Currently only works automatically on Windows. For other
+#' platforms, run the following with the _correct_ location to the installed
+#' GhostScript Binary: Sys.setenv(R_GSCMD = "bin/gs/gs9.23/binaryname")
 #'
 #' @param filename path to a file
 #' @param device which type of output device to use
@@ -93,9 +96,13 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
 #'
 #' @export
 firaSave <- function(filename = "plot.pdf", device = "pdf", ...) {
-  if (Sys.getenv("R_GSCMD") == "") setupGhostScript()
+  needsFont <- device == "pdf" || device == "eps" || device == "ps"
+
+  # set up ghostscript if needed
+  if (Sys.getenv("R_GSCMD") == "" && needsFont) setupGhostScript()
+
+  # save the image
   ggplot2::ggsave(filename = filename, device = device, ...)
-  if (device == "pdf") {
-    extrafont::embed_fonts(filename)
-  }
+
+  if (needsFont) extrafont::embed_fonts(filename)
 }
