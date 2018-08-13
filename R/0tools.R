@@ -20,7 +20,6 @@ setupFont <- function() {
   }
 }
 
-#' @importFrom grDevices windowsFonts
 fontsReady <- function() {
   if (.Platform$OS.type == "windows") {
     if ("Fira Sans" %in% grDevices::windowsFonts()) return(TRUE)

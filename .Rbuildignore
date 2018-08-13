@@ -3,3 +3,4 @@
 ^.*.pdf
 ^img
 ^.travis.yml
+^LICENSE$

@@ -39,7 +39,7 @@ scale_fill_fira <- function(..., continuous = FALSE) {
   if (continuous) {
     pal <- grDevices::colorRampPalette(c(firaCols[1], firaCols[5]),
                                        space = "Lab")
-    return(scale_fill_gradientn(..., colours = pal(256)))
+    return(ggplot2::scale_fill_gradientn(..., colours = pal(256)))
   }
   ggplot2::discrete_scale("fill", paste0("fira"), firaPalette, ...)
 }
@@ -51,7 +51,7 @@ scale_colour_fira <- function(..., continuous = FALSE) {
   if (continuous) {
     pal <- grDevices::colorRampPalette(c(firaCols[1], firaCols[5]),
                                        space = "Lab")
-    return(scale_colour_gradientn(..., colours = pal(256)))
+    return(ggplot2::scale_colour_gradientn(..., colours = pal(256)))
   }
   ggplot2::discrete_scale("colour", paste0("fira"), firaPalette, ...)
 }

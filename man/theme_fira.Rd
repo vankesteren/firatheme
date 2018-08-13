@@ -31,5 +31,5 @@ ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
 
 }
 \seealso{
-\code{\link{firaSave}}, \code{\link{scale_fira}}
+\code{\link{firaSave}}
 }
