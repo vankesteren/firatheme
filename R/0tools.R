@@ -61,7 +61,7 @@ setupGhostScript <- function() {
            ' "C:/Program Files/gs/gs<version.number>/bin/gswin64c.exe")')
     }
   } else {
-    stop("Non-windows platforms currently not supported.",
+    stop("Non-windows platforms currently not automatically supported.",
          " Run the following with the _correct_ location",
          " to the installed GhostScript Binary:\n Sys.setenv(R_GSCMD =",
          ' "bin/gs/gs9.23/binaryname")')

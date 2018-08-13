@@ -4,13 +4,10 @@
 \alias{theme_fira}
 \title{Fira theme}
 \usage{
-theme_fira(family = "Fira Sans", colourPalette = ejPalette)
+theme_fira(family = "Fira Sans")
 }
 \arguments{
-\item{family}{Change the font family. Defaults to Fira Sans.}
-
-\item{colourPalette}{either the function ejPalette or valiPalette
-(or any grDevices::colorRampPalette function)}
+\item{family}{Change the font family. Defaults to Fira Sans}
 }
 \value{
 ggplot theme
@@ -29,9 +26,10 @@ ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
        x = "Efficiency (km/l)",
        y = "Weight (1000 kg)",
        colour = "Cylinders") +
-  theme_fira()
+  theme_fira() +
+  scale_colour_fira()
 
 }
 \seealso{
-\code{\link{valiPalette}}, \code{\link{ejPalette}}
+\code{\link{firaSave}}, \code{\link{scale_fira}}
 }

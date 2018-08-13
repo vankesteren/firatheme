@@ -4,7 +4,7 @@
 </p>
 <br>
 
-This is a `ggplot2` theme I use on my [blog](https://vankesteren.github.io) and elsewhere. You can use it and adapt it if you want. Here is an example:
+This is a `ggplot2` theme I use on my [blog](https://vankesteren.github.io) and elsewhere. You can use it and adapt it if you want. It's designed to be truly plug-and-play. See [below](#example-plots) for examples.
 
 <p align="center">
   <br/>
@@ -27,8 +27,6 @@ As with any software project, this has a collection of dependencies it builds on
 devtools::install_github("vankesteren/firatheme")
 ```
 
-Currently only works with discrete colour and fill aesthetics.
-
 ## Example plots
 Below you can find some example plots made using `theme_fira()`
 
@@ -43,7 +41,8 @@ ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
             x = "Efficiency (km/l)",
             y = "Weight (1000 kg)",
             colour = "Cylinders") +
-       theme_fira()
+       theme_fira() +
+       scale_colour_fira()
 
 firaSave("plot.png", device = "png")
 ```
@@ -56,7 +55,7 @@ library(ggplot2)
 library(firatheme)
 
 ggplot(chickwts, aes(x = feed, y = weight)) +
-  geom_bar(stat = "identity", width=0.8, fill = ejCols[1]) +
+  geom_bar(stat = "identity", width=0.8, fill = firaCols[1]) +
   labs(title = "Chicken weights by feed type",
        y = "Weight (grams)",
        x = "") +
@@ -73,9 +72,10 @@ library(ggplot2)
 library(firatheme)
 
 ggplot(iris, aes(y = Sepal.Length, x = Species, fill = Species)) +
-  geom_boxplot(col = ejCols[4], width = 0.5, size = 1) +
+  geom_boxplot(col = firaCols[4], width = 0.5, size = 1) +
   labs(y = "Sepal Length", title = "Iris data") +
   theme_fira() +
+  scale_fill_fira() +
   theme(legend.position = "none")
 ```
 
@@ -87,9 +87,9 @@ library(ggplot2)
 library(firatheme)
 
 ggplot(airquality, aes(y = Ozone, x = 1:nrow(airquality))) +
-  geom_line(colour = ejCols[2], size = 0.7) +
-  geom_point(colour = ejCols[2], size = 1.7) +
-  geom_smooth(colour = ejCols[1], size = 0.7,se = FALSE) +
+  geom_line(colour = firaCols[2], size = 0.7) +
+  geom_point(colour = firaCols[2], size = 1.7) +
+  geom_smooth(colour = firaCols[1], size = 0.7,se = FALSE) +
   labs(title = "Ozone in New York", x = "Days") +
   theme_fira()
 ```
@@ -98,11 +98,8 @@ ggplot(airquality, aes(y = Ozone, x = 1:nrow(airquality))) +
 
 
 ## Colours
-There are two colour palettes in `firatheme`. The default is `ejCols`
-![col](./img/ejcols.png)
+The colour palette of `firatheme` is available through `firaCols` and `firaPalette()`. In `ggplot` objects, you should use `scale_fill_fira()` and `scale_colour_fira()` for mapped variables. Optionally, the argument `continuous = TRUE` can be passed.
+![col](./img/firacols.png)
 
-The alternative is `valiCols`
-![val](./img/valicols.png)
-
-Using the palette functions, you can get any number of colours from these palettes, for example `ejPalette(n = 25)` --- the last image in the figure below:
-![cols](./img/ejpalette.png)
+Using the palette functions, you can get any number of colours from the palette, for example `firaPalette(n = 25)` --- the last image in the figure below:
+![cols](./img/firapalette.png)

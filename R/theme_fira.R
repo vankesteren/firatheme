@@ -3,9 +3,7 @@
 #' This theme uses Mozilla's Fira Sans as its font.
 #' Save to pdf using \code{firaSave()}.
 #'
-#' @param family Change the font family. Defaults to Fira Sans.
-#' @param colourPalette either the function ejPalette or valiPalette
-#' (or any grDevices::colorRampPalette function)
+#' @param family Change the font family. Defaults to Fira Sans
 #'
 #' @return ggplot theme
 #'
@@ -19,12 +17,13 @@
 #'        x = "Efficiency (km/l)",
 #'        y = "Weight (1000 kg)",
 #'        colour = "Cylinders") +
-#'   theme_fira()
+#'   theme_fira() +
+#'   scale_colour_fira()
 #'
-#' @seealso \code{\link{valiPalette}}, \code{\link{ejPalette}}
+#' @seealso \code{\link{firaSave}}
 #'
 #' @export
-theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
+theme_fira <- function(family = "Fira Sans") {
   if (!fontsReady()) setupFont()
   list(ggplot2::`%+replace%`(
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
@@ -75,11 +74,8 @@ theme_fira <- function(family = "Fira Sans", colourPalette = ejPalette) {
       legend.text = ggplot2::element_text(size = 10, colour = "#212121"),
       strip.text = ggplot2::element_text(size = 12, colour = "#212121")
     )
-  ),
-  ggplot2::discrete_scale("fill", "fira", colourPalette, na.value = "grey50"),
-  ggplot2::discrete_scale("colour", "fira", colourPalette, na.value = "grey50"))
+  ))
 }
-
 
 
 #' Save plots that use the fira theme

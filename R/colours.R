@@ -1,48 +1,61 @@
-#' EJ theme palette
+#' Fira theme palette
 #'
-#' This function outputs n colours from the ej palette
+#' This function outputs n colours from the fira ggplot2 theme palette
 #'
 #' @param n the number of colours to output
 #'
-#' @seealso \code{\link{ejCols}}, \code{\link{valiPalette}}
+#' @seealso \code{\link{firaCols}}
 #'
 #' @export
-ejPalette <- function(n = 5) {
-  if (n == 4) return(ejCols[c(1, 3, 4, 5)])
-  return(grDevices::colorRampPalette(ejCols)(n))
+firaPalette <- function(n = 5) {
+  if (n == 4) return(firaCols[c(1, 3, 4, 5)])
+  grDevices::colorRampPalette(firaCols)(n)
 }
 
-#' EJ theme colours
+#' Fira theme colours
 #'
 #' This is a vector with 5 colours to be used in palettes and other visual
 #' elements.
 #'
-#' @seealso \code{\link{ejPalette}}, \code{\link{valiPalette}}
+#' @seealso \code{\link{firaPalette}}
 #'
 #' @export
-ejCols <- c("#00008b", "#dd7373", "#499293", "#234c20", "#e2bd36")
+firaCols <- c("#00008b", "#dd7373", "#499293", "#234c20", "#e2bd36")
 
-
-#' Vali theme palette
+#' Fira discrete colour scales
 #'
-#' This function outputs n colours from the Vali palette
+#' Colour scales belonging to the fira theme
 #'
-#' @param n the number of colours to output
+#' @inheritParams ggplot2::scale_colour_hue
+#' @param continuous whether the associated variable should be considered
+#' continuous. Typically used after "Error: Continuous value supplied to
+#' discrete scale"
 #'
-#' @seealso \code{\link{valiCols}}, \code{\link{ejPalette}}
+#' @seealso \code{\link{firaPalette}}
 #'
+#' @rdname scale_fira
 #' @export
-valiPalette <- function(n = 5) {
-  if (n == 4) return(valiCols[c(1, 2, 4, 5)])
-  return(grDevices::colorRampPalette(valiCols)(n))
+scale_fill_fira <- function(..., continuous = FALSE) {
+  if (continuous) {
+    pal <- grDevices::colorRampPalette(c(firaCols[1], firaCols[5]),
+                                       space = "Lab")
+    return(scale_fill_gradientn(..., colours = pal(256)))
+  }
+  ggplot2::discrete_scale("fill", paste0("fira"), firaPalette, ...)
 }
 
-#' Vali theme colours
-#'
-#' This is a vector with 5 colours to be used in palettes and other visual
-#' elements.
-#'
-#' @seealso \code{\link{valiPalette}}, \code{\link{ejPalette}}
-#'
+
+#' @rdname scale_fira
 #' @export
-valiCols <- c("#961616", "044389", "#57a57c", "#ffe066", "#56203d")
+scale_colour_fira <- function(..., continuous = FALSE) {
+  if (continuous) {
+    pal <- grDevices::colorRampPalette(c(firaCols[1], firaCols[5]),
+                                       space = "Lab")
+    return(scale_colour_gradientn(..., colours = pal(256)))
+  }
+  ggplot2::discrete_scale("colour", paste0("fira"), firaPalette, ...)
+}
+
+#' @rdname scale_fira
+#' @export
+scale_color_fira <- scale_colour_fira
