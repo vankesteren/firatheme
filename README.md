@@ -4,7 +4,7 @@
 </p>
 <br>
 
-This is a `ggplot2` theme I use on my [blog](https://vankesteren.github.io) and elsewhere. You can use it and adapt it if you want. It's designed to be truly plug-and-play. See [below](#example-plots) for examples.
+This is a `ggplot2` theme I use on my [blog](http://erikjanvankesteren.nl/blog/) and elsewhere. You can use it and adapt it if you want. It's designed to be truly plug-and-play. See [below](#example-plots) for examples.
 
 <p align="center">
   <br/>
