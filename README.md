@@ -89,7 +89,7 @@ library(firatheme)
 ggplot(airquality, aes(y = Ozone, x = 1:nrow(airquality))) +
   geom_line(colour = firaCols[2], size = 0.7) +
   geom_point(colour = firaCols[2], size = 1.7) +
-  geom_smooth(colour = firaCols[1], size = 0.7,se = FALSE) +
+  geom_smooth(colour = firaCols[1], size = 0.7, se = FALSE) +
   labs(title = "Ozone in New York", x = "Days") +
   theme_fira()
 ```
