@@ -71,8 +71,11 @@ theme_fira <- function(family = "Fira Sans") {
                                          hjust = 0.95),
       axis.text = ggplot2::element_text(size = 10, colour = "#212121"),
       legend.title = ggplot2::element_text(size = 12, colour = "#454545"),
-      legend.text = ggplot2::element_text(size = 10, colour = "#212121"),
-      strip.text = ggplot2::element_text(size = 12, colour = "#212121", margin = ggplot2::margin(10, 10, 10, 10, "pt"))
+      legend.text = ggplot2::element_text(size = 10, colour = "#454545"),
+      strip.text = ggplot2::element_text(size = 12, colour = "#454545", 
+                                         margin = ggplot2::margin(10, 10, 
+                                                                  10, 10, 
+                                                                  "pt"))
     )
   ))
 }
