@@ -9,7 +9,7 @@
 #' @export
 firaPalette <- function(n = 5) {
   if (n == 4) return(firaCols[c(1, 3, 4, 5)])
-  grDevices::colorRampPalette(firaCols)(n)
+  grDevices::colorRampPalette(firaCols, space = "Lab")(n)
 }
 
 #' Fira theme colours
