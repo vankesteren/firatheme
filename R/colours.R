@@ -20,7 +20,7 @@ firaPalette <- function(n = 5) {
 #' @seealso \code{\link{firaPalette}}
 #'
 #' @export
-firaCols <- c("#00008b", "#dd7373", "#499293", "#234c20", "#e2bd36")
+firaCols <- c("#3030a3", "#dd7373", "#499293", "#30602d", "#e2bd36")
 
 #' Fira discrete colour scales
 #'
