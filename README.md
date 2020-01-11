@@ -1,7 +1,7 @@
-<p align="center">
-  <img src="./img/title.svg" width="400px"></img>
-  <h5 align="center">Ready-to-use <code>ggplot2</code> theme</h5>
-</p>
+<p align="center"><img src="./img/title.svg" width="400px"></img></p>
+<h5 align="center">Ready-to-use <code>ggplot2</code> theme</h5>
+<p align="center"><a href="https://zenodo.org/badge/latestdoi/125283144"><img src="https://zenodo.org/badge/125283144.svg" alt="DOI"></a></p>
+
 <br>
 
 This is a `ggplot2` theme I use on my [blog](http://erikjanvankesteren.nl/blog/) and elsewhere. You can use it and adapt it if you want. It's designed to be truly plug-and-play. See [below](#example-plots) for examples.
