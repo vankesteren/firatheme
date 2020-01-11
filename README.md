@@ -103,3 +103,17 @@ The colour palette of `firatheme` is available through `firaCols` and `firaPalet
 
 Using the palette functions, you can get any number of colours from the palette, for example `firaPalette(n = 25)` --- the last image in the figure below:
 ![cols](./img/firapalette.png)
+
+## Citation
+If you want to cite `firatheme`, you can use the following `bibtex`:
+
+```bibtex
+@article{vankesteren2020firatheme, 
+  title = {vankesteren/firatheme: firatheme version 0.2.1}, 
+  DOI = {10.5281/zenodo.3604681}, 
+  publisher = {Zenodo}, 
+  author = {Erik-Jan van Kesteren}, 
+  year = {2020}, 
+  month = {Jan}
+}
+```
