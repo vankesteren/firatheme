@@ -49,7 +49,7 @@ setupGhostScript <- function() {
         m <- matches[potentials][i]
         mlen <- attr(matches, "match.length")[potentials][i]
         gsdir <- gsdirs[potentials][i]
-        versions[i] <- as.numeric(gsub("\\.", "", substr(gsdir, m, m+mlen)))
+        versions[i] <- as.numeric(gsub("\\.", "", substr(gsdir, m, m + mlen)))
       }
       Sys.setenv(R_GSCMD = file.path(gsdirs[potentials][which.max(versions)],
                                      binpath))
@@ -59,10 +59,5 @@ setupGhostScript <- function() {
            " to the installed GhostScript Binary:\n Sys.setenv(R_GSCMD =",
            ' "C:/Program Files/gs/gs<version.number>/bin/gswin64c.exe")')
     }
-  } else {
-    stop("Non-windows platforms currently not automatically supported.",
-         " Run the following with the _correct_ location",
-         " to the installed GhostScript Binary:\n Sys.setenv(R_GSCMD =",
-         ' "bin/gs/gs9.23/binaryname")')
   }
 }

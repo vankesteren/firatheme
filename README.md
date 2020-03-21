@@ -23,9 +23,33 @@ As with any software project, this has a collection of dependencies it builds on
 
 
 ## Installation
+On mac computers, first install the [`Fira Sans`](https://fonts.google.com/specimen/Fira+Sans) font to the font book.
+
+
 ```R
 devtools::install_github("vankesteren/firatheme")
 ```
+
+The preferred way to save plots is via the `firaSave()` function. For png output, this works out of the box. 
+
+### PDF output
+For pdf output, `firaSave()` embeds the Fira Sans font by default using the `extrafont` package. The requirement for this is `ghostscript`:
+
+#### On windows
+1. Install [ghostscript](https://www.ghostscript.com/download/gsdnld.html).
+2. Restart your `R` or `RStudio` application
+3. Now you can output!
+
+#### On mac
+1. (install homebrew)
+2. `brew install ghostscript`
+3. Restart your `R` or `RStudio` application
+4. Now you can output!
+
+#### On linux
+1. Install ghostscript so that it is on the `PATH`.
+2. Restart your `R` or `RStudio` application
+3. Now you can output!
 
 ## Example plots
 Below you can find some example plots made using `theme_fira()`
