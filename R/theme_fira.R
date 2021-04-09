@@ -25,7 +25,7 @@
 #' @export
 theme_fira <- function(family = "Fira Sans") {
   if (!fontsReady()) setupFont()
-  list(ggplot2::`%+replace%`(
+  ggplot2::`%+replace%`(
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
     ggplot2::theme(
       # add padding to the plot
@@ -77,7 +77,7 @@ theme_fira <- function(family = "Fira Sans") {
                                                                   10, 10, 
                                                                   "pt"))
     )
-  ))
+  )
 }
 
 
