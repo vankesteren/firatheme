@@ -4,7 +4,7 @@
 
 <br>
 
-This is a `ggplot2` theme I use on my [blog](http://erikjanvankesteren.nl/blog/) and elsewhere. You can use it and adapt it if you want. It's designed to be truly plug-and-play. See [below](#example-plots) for examples.
+This is a `ggplot2` theme I use for almost all my plots. You can use it and adapt it if you want. It's designed to be truly plug-and-play. See [below](#example-plots) for examples.
 
 <p align="center">
   <br/>
@@ -27,7 +27,7 @@ On mac computers, first install the [`Fira Sans`](https://fonts.google.com/speci
 
 
 ```R
-devtools::install_github("vankesteren/firatheme")
+remotes::install_github("vankesteren/firatheme")
 ```
 
 The preferred way to save plots is via the `firaSave()` function. For png output, this works out of the box. 

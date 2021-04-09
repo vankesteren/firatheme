@@ -4,7 +4,9 @@
 \name{firaCols}
 \alias{firaCols}
 \title{Fira theme colours}
-\format{An object of class \code{character} of length 5.}
+\format{
+An object of class \code{character} of length 5.
+}
 \usage{
 firaCols
 }

@@ -1,3 +1,4 @@
+#' @importFrom grDevices pdfFonts windowsFonts
 .onAttach <- function(libname, pkgname) {
   ## Load all fonts
   extrafont::loadfonts(quiet = TRUE)
