@@ -1,9 +1,10 @@
-#' @importFrom grDevices pdfFonts windowsFonts
+#' @importFrom grDevices pdfFonts
 .onAttach <- function(libname, pkgname) {
   ## Load all fonts
   extrafont::loadfonts(quiet = TRUE)
   if (.Platform$OS.type == "windows") {
-    extrafont::loadfonts("win", quiet = TRUE)
+      windowsFonts <- grDevices::windowsFonts
+      extrafont::loadfonts("win", quiet = TRUE)
   }
 }
 
