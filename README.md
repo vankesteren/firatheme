@@ -133,8 +133,8 @@ If you want to cite `firatheme`, you can use the following `bibtex`:
 
 ```bibtex
 @article{vankesteren2021firatheme, 
-  title = {vankesteren/firatheme: firatheme version 0.2.3}, 
-  DOI = {10.5281/zenodo.4675780}, 
+  title = {vankesteren/firatheme: firatheme version 0.2.4}, 
+  DOI = {10.5281/zenodo.4679413}, 
   publisher = {Zenodo}, 
   author = {Erik-Jan van Kesteren}, 
   year = {2021}, 
