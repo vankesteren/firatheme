@@ -1,6 +1,10 @@
 <p align="center"><img src="./img/title.svg" width="400px"></img></p>
 <h5 align="center">Ready-to-use <code>ggplot2</code> theme</h5>
-<p align="center"><a href="https://zenodo.org/badge/latestdoi/125283144"><img src="https://zenodo.org/badge/125283144.svg" alt="DOI"></a></p>
+<p align="center">
+  <a href="https://zenodo.org/badge/latestdoi/125283144"><img src="https://zenodo.org/badge/125283144.svg" alt="DOI"></a>
+  <a href="https://github.com/vankesteren/firatheme/actions/workflows/r_cmd_check.yml"><img src="https://github.com/vankesteren/firatheme/actions/workflows/r_cmd_check.yml/badge.svg" alt="test"></a>
+</p>
+
 
 <br>
 
