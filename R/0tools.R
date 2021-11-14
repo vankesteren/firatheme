@@ -11,7 +11,7 @@
 setupFont <- function() {
   # Loadfonts
   if (!"Fira Sans" %in% extrafont::fonts()) {
-    extrafont::ttf_import(paths = system.file("font", package = "firatheme"))
+    extrafont::font_install("fontfira")
   }
 
   ## Load all fonts

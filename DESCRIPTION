@@ -12,5 +12,8 @@ LazyData: true
 Imports: 
     ggplot2,
     extrafont,
-    grDevices
+    grDevices,
+    fontfira
+Remotes:
+    vankesteren/fontfira
 RoxygenNote: 7.1.1
