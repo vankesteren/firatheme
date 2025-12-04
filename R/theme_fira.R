@@ -81,10 +81,20 @@ theme_fira <- function(family = "Fira Sans") {
       ),
 
       # Adjust text size and axis title position
-      axis.title = ggplot2::element_text(
-        size = 13, colour = "#454545",
-        hjust = 0.95
+      axis.title.x = ggplot2::element_text(
+        size = 13,
+        colour = "#454545",
+        hjust = 1,
+        margin = ggplot2::margin(t = 10)
       ),
+      axis.title.y = ggplot2::element_text(
+        size = 13,
+        colour = "#454545",
+        angle = 90,
+        hjust = 1,
+        margin = ggplot2::margin(r = 10)
+      ),
+
       axis.text = ggplot2::element_text(size = 10, colour = "#212121"),
       legend.title = ggplot2::element_text(size = 12, colour = "#454545"),
       legend.text = ggplot2::element_text(size = 10, colour = "#454545"),
