@@ -1,16 +1,15 @@
 Package: firatheme
 Type: Package
 Title: A ggplot2 Theme using the Fira Sans Font
-Version: 0.2.4
+Version: 0.2.5
 Author: Erik-Jan van Kesteren
 Maintainer: Erik-Jan van Kesteren <e.vankesteren1@uu.nl>
 Description: Make your graphs pretty with the Fira font, colours and prettified
     axes and labels.
 License: MIT + file LICENCE
 Encoding: UTF-8
-LazyData: true
 Imports: 
     ggplot2,
     extrafont,
     grDevices
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.3
