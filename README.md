@@ -136,12 +136,14 @@ Using the palette functions, you can get any number of colours from the palette,
 If you want to cite `firatheme`, you can use the following `bibtex`:
 
 ```bibtex
-@article{vankesteren2021firatheme, 
-  title = {vankesteren/firatheme: firatheme version 0.2.4}, 
-  DOI = {10.5281/zenodo.4679413}, 
-  publisher = {Zenodo}, 
-  author = {Erik-Jan van Kesteren}, 
-  year = {2021}, 
-  month = {apr}
+@software{vankesteren2025firatheme,
+  author       = {Erik-Jan van Kesteren},
+  title        = {vankesteren/firatheme: firatheme version 0.3.0},
+  month        = dec,
+  year         = 2025,
+  publisher    = {Zenodo},
+  version      = {v0.3.0},
+  doi          = {10.5281/zenodo.17821878},
+  url          = {https://doi.org/10.5281/zenodo.17821878},
 }
 ```
