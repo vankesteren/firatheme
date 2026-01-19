@@ -3,6 +3,7 @@
 #' This theme uses Mozilla's Fira Sans as its font.
 #' Save to pdf using \code{firaSave()}.
 #'
+#' @param facet Whether to add borders for better facet legibility (default FALSE)
 #' @param family Change the font family. Defaults to Fira Sans
 #'
 #' @return ggplot theme
@@ -25,9 +26,9 @@
 #' @seealso \code{\link{firaSave}}
 #'
 #' @export
-theme_fira <- function(family = "Fira Sans") {
+theme_fira <- function(facet = FALSE, family = "Fira Sans") {
   if (!fontsReady()) setupFont()
-  ggplot2::`%+replace%`(
+  thm <- ggplot2::`%+replace%`(
     ggplot2::theme_grey(base_size = 11.5, base_family = family),
     ggplot2::theme(
       # add padding to the plot
@@ -108,6 +109,14 @@ theme_fira <- function(family = "Fira Sans") {
       )
     )
   )
+
+  if (facet) thm <- thm + ggplot2::theme(
+    panel.background = ggplot2::element_rect(color = "#454545"),
+    strip.background = ggplot2::element_rect(fill = "#454545", color = "#454545"),
+    strip.text = ggplot2::element_text(color = "white")
+  )
+
+  return(thm)
 }
 
 
