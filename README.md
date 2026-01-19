@@ -157,12 +157,12 @@ If you want to cite `firatheme`, you can use the following `bibtex`:
 ```bibtex
 @software{vankesteren2025firatheme,
   author       = {Erik-Jan van Kesteren},
-  title        = {vankesteren/firatheme: firatheme version 0.3.0},
-  month        = dec,
-  year         = 2025,
+  title        = {vankesteren/firatheme: firatheme version 0.4.0},
+  month        = jan,
+  year         = 2026,
   publisher    = {Zenodo},
-  version      = {v0.3.0},
-  doi          = {10.5281/zenodo.17821878},
-  url          = {https://doi.org/10.5281/zenodo.17821878},
+  version      = {v0.4.0},
+  doi          = {10.5281/zenodo.18300130},
+  url          = {https://doi.org/10.5281/zenodo.18300130},
 }
 ```
