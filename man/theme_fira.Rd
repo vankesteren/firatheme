@@ -4,9 +4,11 @@
 \alias{theme_fira}
 \title{Fira theme}
 \usage{
-theme_fira(family = "Fira Sans")
+theme_fira(facet = FALSE, family = "Fira Sans")
 }
 \arguments{
+\item{facet}{Whether to add borders for better facet legibility (default FALSE)}
+
 \item{family}{Change the font family. Defaults to Fira Sans}
 }
 \value{
