@@ -4,9 +4,11 @@
 \alias{theme_fira}
 \title{Fira theme}
 \usage{
-theme_fira(family = "Fira Sans")
+theme_fira(facet = FALSE, family = "Fira Sans")
 }
 \arguments{
+\item{facet}{Whether to add borders for better facet legibility (default FALSE)}
+
 \item{family}{Change the font family. Defaults to Fira Sans}
 }
 \value{
@@ -19,13 +21,15 @@ Save to pdf using \code{firaSave()}.
 \examples{
 library(ggplot2)
 
-ggplot(mtcars, aes(x = mpg*0.43, y = wt*0.4535924, colour = factor(cyl))) +
+ggplot(mtcars, aes(x = mpg * 0.43, y = wt * 0.4535924, colour = factor(cyl))) +
   geom_point(size = 2) +
-  labs(title = "Car weight vs efficiency",
-       subtitle = "Using sensible metrics",
-       x = "Efficiency (km/l)",
-       y = "Weight (1000 kg)",
-       colour = "Cylinders") +
+  labs(
+    title = "Car weight vs efficiency",
+    subtitle = "Using sensible metrics",
+    x = "Efficiency (km/l)",
+    y = "Weight (1000 kg)",
+    colour = "Cylinders"
+  ) +
   theme_fira() +
   scale_colour_fira()
 

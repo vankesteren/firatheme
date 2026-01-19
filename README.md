@@ -124,6 +124,25 @@ ggplot(airquality, aes(y = Ozone, x = 1:nrow(airquality))) +
 
 ![oz](./img/ozone.png)
 
+### Faceting
+There is a special argument for better legibility of facets and their titles: set `facet = TRUE` to add borders to each panel and a dark strip with ample spacing.
+
+```R
+ggplot(mtcars, aes(x = mpg * 0.43, y = wt * 0.4535924, colour = factor(cyl))) +
+  geom_point(size = 2) +
+  labs(
+    title = "Car weight vs efficiency",
+    subtitle = "By number of cylinders (cyl) and manual transmission (am = 1)",
+    x = "Efficiency (km/l)",
+    y = "Weight (1000 kg)",
+    colour = "Cylinders"
+  ) +
+  theme_fira(facet = TRUE) +
+  scale_colour_fira(guide = "none") + 
+  facet_grid(cols = vars(cyl), rows = vars(am), labeller = label_both)
+```
+
+![fac](./img/facet.png)
 
 ## Colours
 The colour palette of `firatheme` is available through `firaCols` and `firaPalette()`. In `ggplot` objects, you should use `scale_fill_fira()` and `scale_colour_fira()` for mapped variables. Optionally, the argument `continuous = TRUE` can be passed.
